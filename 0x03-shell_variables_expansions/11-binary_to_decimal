@@ -1,2 +1,2 @@
 #!/bin/bash
-cho "obase=2;10;20;30" | bc | tr -d '\n'
+echo 'obase=2; ibase=10; 123' | bc
