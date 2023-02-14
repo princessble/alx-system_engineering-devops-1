@@ -1,2 +1,2 @@
 #!/bin/bash
-printf '%x\n' $DECIMAL
+| grep -oE '[01]+' | awk '{print "ibase=2;obase=A;"$1}' | bc
