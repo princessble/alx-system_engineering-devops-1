@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=2;$ip1" | bc
+cho "obase=2;10;20;30" | bc | tr -d '\n'
