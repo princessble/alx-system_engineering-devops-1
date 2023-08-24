@@ -1,6 +1,6 @@
 # Simple Web Stack
 
-![Image of a simple web stack](0x09-web_infrastructure_design/0-simple_web_stack.jpg)
+![Image of a simple web stack](0x09-web_infrastructure_design/assets/0simpleweb.jpg)
 
 [Visit Board](https://miro.com/app/board/uXjVOfJwct0=/)
 
