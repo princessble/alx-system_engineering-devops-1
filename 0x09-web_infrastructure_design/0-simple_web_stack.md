@@ -1,6 +1,6 @@
 # Simple Web Stack
 
-![Image of a simple web stack](/workspaces/alx-system_engineering-devops/0x09-web_infrastructure_design/assets/0simpleweb.jpg)
+![Image of a simple web stack](![Alt text](image.png))
 
 [Visit Board](https://miro.com/app/board/uXjVOfJwct0=/)
 
