@@ -1,0 +1,39 @@
+
+TASK 3:
+🚀 Scaling Up: Splitting Components with Load Balancing
+
+Table of Contents
+Introduction
+Infrastructure Components
+Why Split Components
+How Load Balancing Works
+
+Introduction
+
+This repository presents an advanced web infrastructure design that focuses on scalability by splitting components and utilizing load balancing. The design separates the web server, application server, and database onto separate servers, enhancing performance and fault tolerance.
+Infrastructure Components.
+
+•	Server: A powerful computer system responsible for hosting the web server, application server, and database components.
+
+•	Load Balancer (HAproxy): Distributes incoming traffic across multiple application servers, ensuring even load distribution and scalability.
+
+•	Web Server: Handles initial user requests, routing them to the appropriate application server for processing.
+
+•	Application Server: Executes dynamic code, generates content, and communicates with the database.
+
+•	Database: Stores and manages structured data, serving as the backend for the application.
+
+Why Split Components?
+
+•	Scalability: Splitting components allows for independent scaling. If one component requires more resources, only its server needs to be upgraded.
+
+•	Isolation: Separating components enhances security and fault tolerance. Failures in one component don't directly affect others.
+
+•	Performance: Dedicated servers for each component reduce resource contention, improving overall system performance.
+
+How Load Balancing Works
+
+The load balancer (HAproxy) distributes incoming requests across the available application servers based on a defined algorithm (e.g., round-robin).
+
+By evenly distributing traffic, the load balancer prevents any single server from being overwhelmed, ensuring optimal performance.
+
