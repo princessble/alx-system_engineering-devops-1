@@ -1,0 +1,79 @@
+🌐 Designing a Distributed Web Infrastructure for www.foobar.com:
+
+Let's discuss a three-server web infrastructure that hosts the website www.foobar.com. 
+This distributed setup aims to enhance performance,
+scalability, and reliability.
+
+🖥️ Two Servers:
+We have two servers to ensure redundancy and load distribution, 
+mitigating the risks of single points of failure.
+
+🌍 Web Server (Nginx):
+The web server remains crucial for routing incoming HTTP requests,
+handling SSL termination, 
+and efficiently serving static content to users.
+
+🚀 Application Server:
+The application server processes dynamic requests, 
+executes code, interacts with the database, 
+and generates dynamic content based on user inputs.
+
+🏗️ Load Balancer (HAproxy):
+Introducing a load balancer (HAproxy) enables 
+even distribution of incoming traffic across multiple application servers. 
+This enhances performance and fault tolerance.
+
+📂 Application Files (Code Base):
+The application files include the website's code and resources, 
+residing on the application servers and 
+contributing to dynamic content generation.
+
+💾 Database (MySQL):
+The database, powered by MySQL,
+stores structured data for the website. 
+It houses user profiles, posts, and comments,
+facilitating data retrieval and storage.
+
+Why Each Element?
+Two Servers: Redundancy ensures high availability.
+If one server fails, the other can take over, reducing downtime.
+
+Load Balancer: Distributes traffic evenly among application servers,
+preventing overload and enhancing responsiveness.
+
+Load Balancer Configuration:
+
+Distribution Algorithm: The load balancer employs a round-robin algorithm.
+It cycles through available application servers sequentially,
+ensuring each server gets a turn to handle incoming requests.
+
+Load Balancer Setup:
+The load balancer is enabling an Active-Passive setup.
+In this configuration,
+one server (Active) serves incoming traffic while the other (Passive) remains on standby. The Active server handles requests,
+and in case of its failure, the Passive server takes over.
+
+Database Primary-Replica (Master-Slave) Cluster:
+In a Primary-Replica cluster,
+the Primary node (Master) manages write operations while Replica nodes (Slaves)
+replicate data from the Primary.
+Replicas handle read operations,
+distributing the database load.
+
+Difference Between Primary and Replica:
+
+Primary Node: Handles write operations,
+maintaining the authoritative data copy.
+Replica Node: Manages read operations,
+offloading read traffic from the Primary, enhancing scalability.
+
+Issues with the Infrastructure:
+
+Single Points of Failure (SPOF): Though we have redundancy in servers and a load balancer,
+a SPOF remains in the database cluster if the Primary fails.
+
+Security Issues: Lack of firewall and 
+HTTPS implementation exposes the infrastructure to security risks.
+
+No Monitoring: Without proper monitoring,
+identifying performance bottlenecks or failures becomes challenging.
