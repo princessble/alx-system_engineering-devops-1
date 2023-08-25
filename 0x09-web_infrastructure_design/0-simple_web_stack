@@ -1,0 +1,64 @@
+ALX Project Web infrastructure design
+
+Task 0. Definitions and Explanations
+
+🌐 User Wants to Access www.foobar.com: A user initiates the process by wanting to access
+ the website at www.foobar.com. 
+ This action triggers a series of interactions within our web infrastructure.
+
+🖥️ Server: A server is a robust computer system that stores and manages resources. In our scenario,
+ we have a single server responsible for hosting and 
+ managing all components of the website.
+
+🌐 Role of Domain Name: The domain name serves as a human-readable address that users enter
+ in their browsers. It acts as a bridge between user-friendly names and
+  IP addresses, making it easier for users to reach our website.
+
+📚 DNS Record for www.foobar.com: The DNS record type for www in www.foobar.com is an A record. 
+This record type maps the domain name to an IP address, 
+which in this case is 8.8.8.8. 
+This mapping enables users' requests to find our server's location.
+
+🌍 Role of Web Server (Nginx): The web server—using Nginx—serves as the gateway between 
+user requests and the application server. 
+It handles tasks like routing requests, managing SSL, and 
+efficiently delivering static content to users.
+
+🚀 Role of Application Server: The application server executes dynamic code to generate content
+ based on user requests. 
+ It interacts with the web server, processes user inputs, queries the database, and
+  produces dynamic HTML pages to be displayed in users' browsers.
+
+📂 Role of Application Files (Code Base): The application files contain the code and 
+resources that constitute the website's functionality and appearance. 
+These files reside on the application server and
+ are responsible for creating the dynamic content that users see.
+
+💾 Role of Database (MySQL): The database, powered by MySQL, stores and 
+manages structured data. 
+It houses various types of information, from user profiles to posts and comments. 
+The application server communicates with the database to retrieve and
+store data as needed.
+
+📨 Server Communication with User's Computer: When a user accesses www.foobar.com, 
+their browser sends an HTTP request to the server's IP address, 8.8.8.8. 
+The web server (Nginx) on our server receives this request and, 
+if necessary, communicates with the application server. 
+The server then sends back HTML, CSS, JavaScript, 
+and other resources to the user's browser for rendering.
+
+❌ Issues with the Infrastructure:
+
+Single Point of Failure (SPOF): The use of a single server creates a vulnerability. 
+If the server fails, the entire website becomes unavailable, 
+impacting user experience and accessibility.
+
+Downtime During Maintenance: Whenever maintenance tasks like deploying new code are performed, 
+the web server often needs to be restarted. 
+This downtime during restarts can result in users 
+being unable to access the website temporarily.
+
+Inability to Scale with Traffic: With only one server, 
+the infrastructure struggles to handle a sudden influx of traffic. 
+High traffic volumes can lead to slow response times and reduced performance.
+
