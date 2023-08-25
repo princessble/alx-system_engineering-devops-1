@@ -1,0 +1,44 @@
+WEB INFRASTRUCTURE DESIGN
+
+TASK 2 DEFINITION
+
+🌐 Designing a Secured and Monitored Web Infrastructure for www.foobar.com:
+Let's outline a three-server web infrastructure to host www.foobar.com that prioritizes security, encrypted traffic, and robust monitoring.
+
+🔒 Security Measures:
+•	Firewalls: We incorporate three firewalls to provide multiple layers of security. Firewalls act as barriers, filtering incoming and outgoing network traffic, safeguarding the infrastructure from unauthorized access.
+
+•	SSL Certificate: We implement an SSL certificate to enable HTTPS for www.foobar.com. This ensures encrypted communication between users' browsers and the server, enhancing data security and privacy.
+
+📊 Monitoring Implementation:
+
+•	Monitoring Clients: We deploy three monitoring clients that act as data collectors, gathering information about the infrastructure's performance and health. These clients transmit data to monitoring services like Sumo Logic.
+
+Why Each Element?
+
+•	Firewalls: Multiple firewalls bolster security, preventing unauthorized access, intrusion attempts, and malicious activities.
+
+•	SSL Certificate: Enabling HTTPS ensures that data transmitted between users and the server is encrypted, protecting sensitive information from eavesdropping and tampering.
+
+•	Monitoring Clients: Monitoring tools continuously collect and analyze data from various components, helping to identify performance issues, anomalies, and potential threats.
+
+•	Monitoring Data Collection:
+
+The monitoring tool collects data by integrating monitoring agents (clients) into each server. These agents gather information such as server health, resource utilization, and application performance.
+
+Monitoring Web Server QPS:
+
+To monitor the web server's Query Per Second (QPS):
+
+•	Utilize the monitoring tool's dashboard to monitor the web server's performance metrics.
+•	Set up alerts to notify administrators if QPS exceeds or falls below acceptable thresholds.
+•	Use aggregated data to optimize the web server's configuration and capacity.
+
+Issues with the Infrastructure:
+
+•	Terminating SSL at Load Balancer Level: While terminating SSL at the load balancer enhances efficiency, it means the internal network traffic might be unencrypted. End-to-end encryption is compromised.
+
+•	Single MySQL Server Accepting Writes: Depending on a single MySQL server for write operations poses a risk. If it fails, write functionality is lost, impacting data integrity.
+
+•	Homogeneous Server Components: Servers with identical components could lead to a single point of failure. If a critical component fails, all servers might be affected.
+
